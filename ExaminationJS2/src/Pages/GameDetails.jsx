@@ -15,7 +15,7 @@ function GameDetails() {
   if (isLoading) return <p>Laddar...</p>;
   if (error) return <p>Något gick fel</p>;
 
-  const stars = Math.floor(data.rating); // Kunda få fram raiting i stjärnor.
+  const stars = Math.floor(data.rating); // Kunna få fram raiting i stjärnor.
 
 
  return (

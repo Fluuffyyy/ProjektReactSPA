@@ -1,16 +1,75 @@
-# React + Vite
+# ProjektReactSPA
+### Av Robin Karlsson
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Till stor del av styling och funktionalitet har ChatGPT använts som ett stöd och lärande verktyg utanför lektionstid 😊
 
-Currently, two official plugins are available:
+Detta är en **Single Page Application (SPA)** byggd i **React** som en del av **Examination – JavaScript 2**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Själva app-koden ligger i mappen `ExaminationJS2`.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📋 Innehåll
+1. Om projektet
+2. Funktioner
+3. Tech stack
+4. Datahantering med TanStack Query
+5. Installation & start
+6. Scripts
+7. Projektstruktur
+8. Vad jag lärt mig
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💡 Om projektet
+Projektet är en React-app där användaren kan se och interagera med data som hämtas från ett externt API.
+
+Syfte:
+- Öva på React-komponenter
+- Arbeta med routing
+- Hantera API-data effektivt
+
+Målet är att skapa en modern, responsiv och interaktiv webbapplikation.
+
+---
+
+## 🚀 Funktioner
+Appen erbjuder bland annat:
+- 🚧 Navigering mellan sidor utan omladdning (SPA)
+- 📦 Visning av data från API
+- ⏳ Hantering av laddnings- och felstatus
+- 🔁 Caching av data för bättre prestanda
+
+---
+
+## ⚙️ Tech stack
+Det här projektet använder:
+
+- **React** – UI-bibliotek för komponenter
+- **React Router** – För navigering mellan sidor
+- **TanStack Query (React Query)** – För datahämtning och caching
+- **Fetch API** – För att göra HTTP-anrop
+- **CSS** – Stilar
+
+---
+
+## 🔎 Datahantering med TanStack Query
+Vi använder **TanStack Query** (tidigare kallad React Query) för att:
+
+- 🌀 hämta data från ett API
+- 📌 cacha resultat så de inte hämtas om onödigt
+- ⏳ hantera laddningsstatus (`isLoading`)
+- ❌ hantera fel (`error`)
+- 🔄 automatiskt synkronisera data
+
+Detta gör datalogiken enklare, renare och mer skalbar jämfört med att använda `useState` och `useEffect` manuellt.
+
+TanStack Query används för att hantera så kallad *server state*, vilket skiljer sig från vanlig lokal state i React.
+
+Exempel i koden:
+
+```js
+const { data, isLoading, error } = useQuery({
+  queryKey: ['items'],
+  queryFn: fetchItems
+})

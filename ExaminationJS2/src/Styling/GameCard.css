@@ -15,7 +15,6 @@
     border-color 0.25s ease;
 }
 
-/* lyft hela kortet */
 .game-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.75);
@@ -30,7 +29,6 @@
   font-weight: 600;
 }
 
-/* IMAGE */
 .image-wrapper {
   overflow: hidden;
   border-radius: 14px;
@@ -54,7 +52,6 @@
   filter: brightness(0.9);
 }
 
-/* BUTTON */
 .favorite-button {
   background: rgba(255, 255, 255, 0.08);
   color: white;

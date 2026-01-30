@@ -71,7 +71,7 @@ main {
   color:rgb(255, 255, 255);
 }
 
-/* ===== HERO (lion + welcome) ===== */
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -104,11 +104,11 @@ main {
   opacity: 0.9;
 }
 
-/* Sök/pagination samma bredd och centrerat */
+
 .hero .games-controls {
   width: 100%;
   max-width: 520px;
-  margin: 0; /* tar bort extra luft */
+  margin: 0; 
 }
 
 

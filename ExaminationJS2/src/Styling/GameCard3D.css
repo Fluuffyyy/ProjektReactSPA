@@ -80,7 +80,6 @@
   height: 120px;
 }
 
-/* “Title” – vi använder text istället för image */
 .title {
   width: 100%;
   transition: transform 0.5s;
@@ -101,7 +100,6 @@
   transform: translate3d(0%, -50px, 100px);
 }
 
-/* “Character” – vi använder samma cover som fallback */
 .character {
   width: 92%;
   opacity: 0;
