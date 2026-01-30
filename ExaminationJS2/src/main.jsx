@@ -7,6 +7,7 @@ import Games from "./Pages/Games.jsx";
 import About from "./Pages/About.jsx";
 import Contact from "./Pages/Contact.jsx";
 import NotFound from "./Pages/notFound.jsx";
+import GameDetails from "./Pages/GameDetails.jsx";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navigation from "./Components/Navigation.jsx";
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")).render(
         <Navigation />
         <Routes>
           <Route index element={<Games />} />
+          <Route path="game/:id" element={<GameDetails />} />
           <Route path="About" element={<About />} />
           <Route path="Games" element={<Games />} />
           <Route path="Contact" element={<Contact />} />

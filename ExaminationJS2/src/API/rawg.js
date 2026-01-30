@@ -16,3 +16,16 @@ export async function fetchGames({ queryKey }) {
 
   return res.json();
 }
+
+// Tar emot ID och bygger rätt URL => Hämtar data => Returnerar JSON
+export const fetchGameDetails = async (id) => {
+  const url = `${RAWG_BASE_URL}/games/${id}?key=${RAWG_API_KEY}`;
+
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    throw new Error("Kunde inte hämta speldetaljer");
+  }
+
+  return res.json();
+};

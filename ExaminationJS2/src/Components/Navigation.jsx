@@ -5,9 +5,19 @@ function Navigation() {
   return (
     <header className="header">
       <div className="header-inner">
-        <h1 className="logo"> 
-          <NavLink to="/">The <span> Gaming </span> Hub </NavLink>
-        </h1>
+<h1 className="logo">
+  <NavLink to="/" className="logo-link">
+    The <span className="logo-accent">Gaming</span> Hub
+  </NavLink>
+</h1>
+
+ <div className="header-lion">
+    <img
+      src="/logo-lion.png"
+      alt="The Gaming Hub"
+      className="header-lion-img"
+    />
+  </div>
 
         <nav className="nav">
           <NavLink to="/" className="nav-link">

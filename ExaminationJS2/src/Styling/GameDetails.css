@@ -1,0 +1,105 @@
+/* ====== Layout container ====== */
+.game-details {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.game-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ====== Top section: image + meta side by side ====== */
+.game-top {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+/* Bilden */
+.game-image {
+  width: 420px;        
+  max-width: 100%;     
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(83, 83, 83, 0.45);
+}
+
+/* Meta (released/rating/genres) */
+.game-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left;
+  padding-top: 0.5rem;
+  min-width: 220px;
+}
+
+/* Released större */
+.style-released {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Rating rad */
+.style-rating {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.stars {
+  color: gold;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.rating-number {
+  margin-left: 0.5rem;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Genres */
+.game-genres {
+  margin: 0;
+  font-style: italic;
+}
+
+/* ====== Description panel under ====== */
+.description-box {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 30px rgba(83, 83, 83, 0.45);
+}
+
+.game-description {
+  margin: 0;
+  line-height: 1.75;
+  font-size: 1rem;
+  text-align: left;
+  color: #f2f2f2;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== Mobile: stack image + meta ====== */
+@media (max-width: 768px) {
+  .game-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .game-meta {
+    text-align: center;
+    align-items: center;
+  }
+}

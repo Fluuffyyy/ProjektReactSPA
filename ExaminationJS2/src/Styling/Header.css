@@ -2,14 +2,12 @@
   width: 100%;
   background: rgba(15, 15, 15, 0.75); /* glassy istället för platt */
   color: white;
-  padding: 12px 20px;
+  padding: 10px 16px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 20px;
-
   position: sticky;
   top: 16px; /* lite luft från toppen */
   z-index: 1000;
-
   backdrop-filter: blur(12px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
@@ -22,30 +20,66 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px; /* ger luft mellan logo, lion och nav */
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+   ========================= */
+
 .logo {
-  font-size: 1.9rem;
+  margin: 0;
+  font-family: cursive, sans-serif;
   font-weight: 800;
   letter-spacing: 0.6px;
-  margin: 0;
-  font-family: cursive;
-
-  transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.logo span {
+/* hela loggan (bild + text) är klickbar */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.logo-accent {
   color: #4da3ff;
   text-shadow: 0 0 14px rgba(77, 163, 255, 0.6);
 }
 
-.logo:hover {
-  text-shadow: 0 0 22px rgba(77, 163, 255, 0.9);
+/* lejonbilden */
+.logo-image {
+  width: 100px;
+  height: 72px;
+  object-fit: contain;
+   filter: drop-shadow(0 0 18px rgba(77, 163, 255, 1));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-link {
+  padding: 6px 10px;
+}
+
+/* hover-effekter */
+.logo-link:hover {
   transform: translateY(-2px);
 }
 
-/* NAV */
+.logo-link:hover .logo-image {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 14px rgba(77, 163, 255, 1));
+}
+
+.logo-link:hover .logo-accent {
+  text-shadow: 0 0 22px rgba(77, 163, 255, 0.9);
+}
+
+/* =========================
+   NAV
+   ========================= */
+
 .nav {
   display: flex;
   gap: 16px;
@@ -55,10 +89,9 @@
   color: #d0d0d0;
   text-decoration: none;
   font-weight: 600;
-
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 8px 12px;
   border-radius: 10px;
-
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -72,3 +105,24 @@
   background: rgba(77, 163, 255, 0.18);
   box-shadow: inset 0 0 0 1px rgba(77, 163, 255, 0.4);
 }
+
+/* ===== LION LOGO I HEADER ===== */
+.header-lion {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+  height: 100%;
+}
+
+.header-lion-img {
+  width: 70px;      /* <-- layout-storlek (påverkar headerns höjd) */
+  height: 70px;
+  object-fit: contain;
+  transform: scale(4.5);  /* <-- VISUELL storlek (påverkar inte headerns höjd) */
+  transform-origin: center;
+  filter: drop-shadow(0 0 18px rgba(77, 163, 255, 0.9));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+

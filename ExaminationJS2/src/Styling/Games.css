@@ -12,7 +12,6 @@ main {
     justify-items: center;
 }
 
-
 .games-controls {
   display: flex;
   flex-direction: column;
@@ -20,7 +19,6 @@ main {
   gap: 12px;
   margin: 20px 0 32px;
 }
-
 
 .games-controls input {
   width: min(420px, 90%);
@@ -36,7 +34,6 @@ main {
 .games-controls input::placeholder {
   color: #000000;
 }
-
 
 .pagination {
   display: flex;
@@ -68,3 +65,50 @@ main {
   color: inherit;
   text-decoration: none;
 }
+
+.container {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:rgb(255, 255, 255);
+}
+
+/* ===== HERO (lion + welcome) ===== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  margin: 2rem auto 2.2rem auto;
+  padding: 2rem 1.5rem;
+
+  width: min(900px, 95%);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-lion {
+  width: 240px;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 30px rgba(77, 163, 255, 0.95));
+}
+
+.hero h2 {
+  margin: 0.2rem 0 0.3rem 0;
+}
+
+.hero p {
+  margin: 0 0 1.2rem 0;
+  opacity: 0.9;
+}
+
+/* Sök/pagination samma bredd och centrerat */
+.hero .games-controls {
+  width: 100%;
+  max-width: 520px;
+  margin: 0; /* tar bort extra luft */
+}
+
+

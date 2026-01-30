@@ -1,4 +1,6 @@
 import "../Styling/GameCard3D.css";
+import { Link } from "react-router-dom";
+
 
 function GameCard({ game }) {
   const cover = game.background_image;
@@ -7,7 +9,7 @@ function GameCard({ game }) {
   const character = game.background_image;
 
   return (
-    <a className="card-3d" href={game.website || "#"} target="_blank" rel="noreferrer">
+    <Link className="card-3d" to={`/game/${game.id}`}>
       <div className="wrapper">
         {cover && <img src={cover} className="cover-image" alt={game.name} />}
       </div>
@@ -15,7 +17,7 @@ function GameCard({ game }) {
       <div className="title">{game.name}</div>
 
       {character && <img src={character} className="character" alt="" />}
-    </a>
+    </Link>
   );
 }
 
