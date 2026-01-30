@@ -9,7 +9,7 @@ function About() {
         <p>
           The Gaming Hub är en React-baserad Single Page Application där du kan
           utforska spel med hjälp av RAWG API.
-          </p>
+        </p>
       </section>
     </main>
   );

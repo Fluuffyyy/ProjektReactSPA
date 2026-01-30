@@ -6,13 +6,17 @@ function Contact() {
       <section className="page-card">
         <h1>Contact</h1>
         <p>
-          Har du frågor eller feedback?  
+          Har du frågor eller feedback?
           <br />
           Kontakta oss på <strong>contact@gaminghub.dev</strong>
         </p>
-        <br /><br /><br />
+        <br />
+        <br />
+        <br />
         <p>Nej vi har inget telefonnummer... Pröva ring 112?</p>
-        <br /><br /><br />
+        <br />
+        <br />
+        <br />
         <p>PS... Jag skojar bara! Stäm inte mig 😘</p>
       </section>
     </main>
@@ -20,4 +24,3 @@ function Contact() {
 }
 
 export default Contact;
-
