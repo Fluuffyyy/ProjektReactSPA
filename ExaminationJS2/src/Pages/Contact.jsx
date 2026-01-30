@@ -12,6 +12,8 @@ function Contact() {
         </p>
         <br /><br /><br />
         <p>Nej vi har inget telefonnummer... Pröva ring 112?</p>
+        <br /><br /><br />
+        <p>PS... Jag skojar bara! Stäm inte mig 😘</p>
       </section>
     </main>
   );

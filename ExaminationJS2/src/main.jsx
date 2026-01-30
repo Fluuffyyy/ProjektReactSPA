@@ -27,7 +27,6 @@ createRoot(document.getElementById("root")).render(
           <Route path="Contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-
       </BrowserRouter>
     </QueryClientProvider>
   </StrictMode>
