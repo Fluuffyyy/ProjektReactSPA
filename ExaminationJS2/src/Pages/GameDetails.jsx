@@ -6,31 +6,39 @@ import "../Styling/GameDetails.css";
 function GameDetails() {
   const { id } = useParams();
 
-  const { data, isLoading, error } = useQuery({
+  const {
+    data: game,
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
     queryKey: ["game", id],
     queryFn: () => fetchGameDetails(id),
+    enabled: Boolean(id),
   });
 
   if (isLoading) return <p>Laddar...</p>;
-  if (error) return <p>Något gick fel</p>;
+  if (isError) return <p>{error.message || "Något gick fel"}</p>;
+  if (!game) return <p>Spelet hittades inte.</p>;
 
-  const stars = Math.floor(data.rating); // Kunna få fram raiting i stjärnor.
+  const rating = game.rating ?? 0;
+  const stars = Math.max(0, Math.min(5, Math.floor(rating)));
 
   return (
     <div className="game-details">
-      <h1 className="game-title">{data.name}</h1>
+      <h1 className="game-title">{game.name}</h1>
 
       <div className="game-top">
-        {data.background_image && (
+        {game.background_image && (
           <img
-            src={data.background_image}
-            alt={data.name}
+            src={game.background_image}
+            alt={game.name}
             className="game-image"
           />
         )}
 
         <div className="game-meta">
-          <p className="style-released">Released: {data.released}</p>
+          <p className="style-released">Released: {game.released}</p>
 
           <p className="style-rating">
             Rating:
@@ -38,20 +46,20 @@ function GameDetails() {
               {"★".repeat(stars)}
               {"☆".repeat(5 - stars)}
             </span>
-            <span className="rating-number">({data.rating})</span>
+            <span className="rating-number">({rating})</span>
           </p>
 
-          {data.genres && (
+          {game.genres?.length > 0 && (
             <p className="game-genres">
-              Genres: {data.genres.map((g) => g.name).join(", ")}
+              Genres: {game.genres.map((g) => g.name).join(", ")}
             </p>
           )}
         </div>
       </div>
 
-      {data.description_raw && (
+      {game.description_raw && (
         <div className="description-box">
-          <p className="game-description">{data.description_raw}</p>
+          <p className="game-description">{game.description_raw}</p>
         </div>
       )}
     </div>
