@@ -4,7 +4,7 @@ import { fetchGames } from "../API/rawg";
 export function useGames(page, search) {
   return useQuery({
     queryKey: ["games", page, search],
-    queryFn: fetchGames,
-    keepPreviousData: true,
+      queryFn: fetchGames,
+        keepPreviousData: true,
   });
 }

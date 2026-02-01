@@ -1,25 +1,34 @@
 import { useState } from "react";
-import { useGames } from "../Hooks/useGames";
 import { useSearchParams } from "react-router-dom";
+import { useGames } from "../Hooks/useGames";
 import GameCard from "../Components/GameCard";
 import "../Styling/Games.css";
 
 function Games() {
-  const [search, setSearch] = useState("");
+  const [searchText, setSearchText] = useState("");
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const page = Number(searchParams.get("page")) || 1;
+  const currentPage = Number(searchParams.get("page")) || 1;
 
-  const { data, isLoading, isError, error, isFetching } = useGames(
-    page,
-    search,
-  );
-
-  const games = data?.results ?? [];
-
-  const goToPage = (newPage) => {
-    setSearchParams({ page: String(Math.max(1, newPage)) });
+  const setPage = (nextPage) => {
+    const safePage = Math.max(1, nextPage);
+    setSearchParams({ page: String(safePage) });
   };
+
+  const handleSearchChange = (e) => {
+    setSearchText(e.target.value);
+    setPage(1);
+  };
+
+  const {
+    data: gamesResponse,
+    isLoading,
+    isError,
+    error,
+    isFetching,
+  } = useGames(currentPage, searchText);
+
+  const games = gamesResponse?.results ?? [];
 
   return (
     <main className="container">
@@ -34,23 +43,26 @@ function Games() {
           <input
             type="text"
             placeholder="Sök efter spel..."
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-              goToPage(1); // när man söker börjar vi alltid från sida 1
-            }}
+            value={searchText}
+            onChange={handleSearchChange}
           />
 
           <div className="pagination">
-            <button onClick={() => goToPage(page - 1)} disabled={page === 1}>
+            <button
+              onClick={() => setPage(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
               ← Föregående
             </button>
 
             <span>
-              Sida {page} {isFetching && "(uppdaterar...)"}
+              Sida {currentPage} {isFetching && "(uppdaterar...)"}
             </span>
 
-            <button onClick={() => goToPage(page + 1)} disabled={!data?.next}>
+            <button
+              onClick={() => setPage(currentPage + 1)}
+              disabled={!gamesResponse?.next}
+            >
               Nästa →
             </button>
           </div>
