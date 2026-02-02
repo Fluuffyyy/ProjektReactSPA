@@ -23,10 +23,10 @@ function Navigation() {
           <NavLink to="/" className="nav-link">
             Home
           </NavLink>
-          <NavLink to="/About" className="nav-link">
+          <NavLink to="/about" className="nav-link">
             About
           </NavLink>
-          <NavLink to="/Contact" className="nav-link">
+          <NavLink to="/contact" className="nav-link">
             Contact
           </NavLink>
         </nav>

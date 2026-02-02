@@ -38,8 +38,8 @@ function GameDetails() {
         )}
 
         <div className="game-meta">
-          <p className="style-released">Released: {game.released}</p>
-
+          <p className="style-released">Release date: {game.released}</p>
+          
           <p className="style-rating">
             Rating:
             <span className="stars">
