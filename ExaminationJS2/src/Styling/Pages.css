@@ -54,3 +54,10 @@
   margin-bottom: 1rem;
   max-width: 500px;
 }
+
+.highlight {
+  display: block;
+  margin-top: 0.75rem;
+  color: rgb(255, 254, 254);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

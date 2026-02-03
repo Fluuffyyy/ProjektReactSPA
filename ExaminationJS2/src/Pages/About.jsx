@@ -17,9 +17,10 @@ function About() {
         <p className="api-note">
           Denna komponent är ett exempel på användning av useEffect
           och fetch för att uppfylla grundkravet för API-hantering. 
-          I resten av applikationen används TanStack Query för 
+          
+          <strong className="highlight">I resten av applikationen används TanStack Query för 
           datahämtning eftersom det ger bättre struktur, cache och hantering av 
-          loading- och error-states.
+          loading- och error-states.</strong>
         </p>
         <ApiDemo />
       </section>

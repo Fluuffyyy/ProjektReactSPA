@@ -21,7 +21,7 @@ function Navigation() {
 
         <nav className="nav">
           <NavLink to="/" className="nav-link">
-            Home
+            Games
           </NavLink>
           <NavLink to="/about" className="nav-link">
             About
