@@ -12,9 +12,9 @@ Applikationen använder routing med React Router och hämtar speldata från RAWG
 Projektet är byggt med Vite och använder TanStack Query för att hantera server-state samt caching, loading och error-states.
 
 
-# ⭐ Starta projektet ⭐
-1. Klona repot ➡️ git clone <repo-url>
-2. Gå in i projektmappen ➡️ cd ProjektReactSPA
+# ⭐ Starta projektet ⭐ 
+1. Klona repot ➡️ git clone <https://github.com/Fluuffyyy/ProjektReactSPA.git>
+2. Gå in i projektmappen ➡️ cd ProjektReactSPA Sedan ➡️ cd ExaminationJS2
 3. Installera NPM ➡️ npm install
 4. Starta servern ➡️ npm run dev
 
