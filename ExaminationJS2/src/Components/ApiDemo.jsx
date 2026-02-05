@@ -9,7 +9,7 @@ function ApiRequirementDemo() {
     async function testFetch() {
       try {
         const res = await fetch(`${RAWG_BASE_URL}/games?key=${RAWG_API_KEY}&page_size=1`);
-        if (!res.ok) throw new Error("Kunde inte hämta data, Försök igen!");
+        if (!res.ok) throw new Error("Kunde inte hämta data, Försök igen! 😔");
         setStatus("API OK! 😊");
       } catch (e) {
         setError(e.message);
