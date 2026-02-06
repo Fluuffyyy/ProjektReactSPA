@@ -14,7 +14,7 @@ function Navigation() {
  <div className="header-lion">
     <img
       src="/logo-lion.png"
-      alt="The Gaming Hub"
+      alt="Lejon LOGO"
       className="header-lion-img"
     />
   </div>
